@@ -1,9 +1,13 @@
 FROM centos:7.6.1810
 MAINTAINER Hassan Foroughi
 
+LABEL description="Container file for miniconda3"
+
+ARG dockerver=latest
+
 RUN yum -y update \
     && yum install -y which wget bzip2 graphviz git gcc fontconfig \
-    && wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh \
+    && wget https://repo.continuum.io/miniconda/Miniconda3-${dockerver}-Linux-x86_64.sh -O ~/miniconda.sh \
     && bash ~/miniconda.sh -b -p /usr/local/miniconda \
     && rm -rf ~/miniconda.sh \
     && rm -rf ~/.condarc ~/.conda ~/.continuum \
