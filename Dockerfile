@@ -3,7 +3,7 @@ MAINTAINER Hassan Foroughi
 
 LABEL description="Container file for miniconda3"
 
-ARG dockerver=latest
+ARG dockerver=4.7.12
 
 RUN yum -y update \
     && yum install -y which wget bzip2 graphviz git gcc fontconfig \
