@@ -1,6 +1,8 @@
 FROM centos:7.6.1810
 MAINTAINER Hassan Foroughi
 
+LABEL description="Container file for miniconda3"
+
 ARG dockerver=4.6.14
 
 RUN yum -y update \
